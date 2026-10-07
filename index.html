@@ -1,0 +1,939 @@
+<!DOCTYPE html>
+<html lang="en" class="scroll-smooth">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Willice Kaburah | Composer, Music Educator & Engraver</title>
+    <!-- Tailwind CSS CDN -->
+    <script src="https://cdn.tailwindcss.com"></script>
+    <!-- Font Awesome Icons -->
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
+    <!-- Google Fonts -->
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Cinzel:wght@400;600;700;800&family=Plus+Jakarta+Sans:wght@300;400;500;600;700&display=swap" rel="stylesheet">
+    
+    <script>
+        tailwind.config = {
+            theme: {
+                extend: {
+                    colors: {
+                        amber: {
+                            400: '#fbbf24',
+                            500: '#f59e0b',
+                            600: '#d97706',
+                        },
+                        gold: {
+                            100: '#fdf8e6',
+                            300: '#f2d37c',
+                            400: '#e5be4e',
+                            500: '#d4af37',
+                            600: '#b88d23',
+                            700: '#8c6613',
+                        },
+                        darkbg: '#0B0F17',
+                        cardbg: '#141C2A',
+                        surface: '#1E293B'
+                    },
+                    fontFamily: {
+                        cinzel: ['Cinzel', 'serif'],
+                        sans: ['Plus Jakarta Sans', 'sans-serif'],
+                    }
+                }
+            }
+        }
+    </script>
+    
+    <style>
+        /* Custom Scrollbar */
+        ::-webkit-scrollbar {
+            width: 8px;
+        }
+        ::-webkit-scrollbar-track {
+            background: #0B0F17;
+        }
+        ::-webkit-scrollbar-thumb {
+            background: #1E293B;
+            border-radius: 4px;
+        }
+        ::-webkit-scrollbar-thumb:hover {
+            background: #d4af37;
+        }
+        
+        /* Subtle Glow effects */
+        .gold-glow {
+            box-shadow: 0 0 25px -5px rgba(212, 175, 55, 0.25);
+        }
+        .text-gradient {
+            background: linear-gradient(135deg, #FFF 0%, #E5BE4E 50%, #D4AF37 100%);
+            -webkit-background-clip: text;
+            -webkit-text-fill-color: transparent;
+        }
+        .bg-gradient-gold {
+            background: linear-gradient(135deg, #D4AF37 0%, #B88D23 100%);
+        }
+    </style>
+</head>
+<body class="bg-darkbg text-slate-200 font-sans antialiased selection:bg-amber-500 selection:text-slate-900">
+
+    <!-- Navigation Header -->
+    <header class="fixed top-0 left-0 right-0 z-50 bg-darkbg/85 backdrop-blur-md border-b border-slate-800/80 transition-all duration-300">
+        <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
+            <div class="flex items-center justify-between h-20">
+                <!-- Brand Logo / Name -->
+                <a href="#home" class="flex items-center gap-3 group">
+                    <div class="w-10 h-10 rounded-full bg-slate-800 border border-amber-500/40 flex items-center justify-center text-amber-400 group-hover:scale-105 group-hover:border-amber-400 transition-all">
+                        <i class="fa-solid fa-music text-lg"></i>
+                    </div>
+                    <div>
+                        <span class="font-cinzel text-xl font-bold tracking-wider text-slate-100 block group-hover:text-amber-400 transition-colors">WILLICE KABURAH</span>
+                        <span class="text-xs text-amber-400/80 tracking-widest uppercase block font-medium">Heritage Harmonies-KE</span>
+                    </div>
+                </a>
+
+                <!-- Desktop Nav Navigation -->
+                <nav class="hidden md:flex items-center gap-8 text-sm font-medium">
+                    <a href="#about" class="text-slate-300 hover:text-amber-400 transition-colors">About</a>
+                    <a href="#catalog" class="text-slate-300 hover:text-amber-400 transition-colors">Sheet Music Catalog</a>
+                    <a href="#player" class="text-slate-300 hover:text-amber-400 transition-colors">Audio & Previewer</a>
+                    <a href="#services" class="text-slate-300 hover:text-amber-400 transition-colors">Services</a>
+                    <a href="#contact" class="px-5 py-2.5 rounded-full bg-amber-500/10 text-amber-400 border border-amber-500/30 hover:bg-amber-500 hover:text-slate-950 transition-all font-semibold">Request Score / Contact</a>
+                </nav>
+
+                <!-- Mobile menu button -->
+                <button id="mobile-menu-btn" class="md:hidden p-2 rounded-lg text-slate-400 hover:text-white hover:bg-slate-800 focus:outline-none" aria-label="Toggle Navigation">
+                    <i class="fa-solid fa-bars text-xl"></i>
+                </button>
+            </div>
+        </div>
+
+        <!-- Mobile Menu -->
+        <div id="mobile-menu" class="hidden md:hidden bg-cardbg border-b border-slate-800 px-4 pt-3 pb-6 space-y-3">
+            <a href="#about" class="block px-3 py-2 rounded-md text-base font-medium text-slate-300 hover:bg-slate-800 hover:text-amber-400">About</a>
+            <a href="#catalog" class="block px-3 py-2 rounded-md text-base font-medium text-slate-300 hover:bg-slate-800 hover:text-amber-400">Sheet Music Catalog</a>
+            <a href="#player" class="block px-3 py-2 rounded-md text-base font-medium text-slate-300 hover:bg-slate-800 hover:text-amber-400">Audio & Previewer</a>
+            <a href="#services" class="block px-3 py-2 rounded-md text-base font-medium text-slate-300 hover:bg-slate-800 hover:text-amber-400">Services</a>
+            <a href="#contact" class="block px-3 py-2 text-center rounded-md text-base font-semibold bg-amber-500 text-slate-950">Request Score / Contact</a>
+        </div>
+    </header>
+
+    <!-- Hero Section -->
+    <section id="home" class="relative pt-32 pb-20 md:pt-40 md:pb-32 overflow-hidden flex items-center min-h-screen">
+        <!-- Background Decorative Elements -->
+        <div class="absolute inset-0 bg-[radial-gradient(ellipse_at_top_right,_var(--tw-gradient-stops))] from-amber-500/10 via-transparent to-transparent opacity-70"></div>
+        <div class="absolute top-1/3 left-10 w-72 h-72 bg-amber-500/5 rounded-full filter blur-3xl pointer-events-none"></div>
+        <div class="absolute bottom-10 right-10 w-96 h-96 bg-blue-500/5 rounded-full filter blur-3xl pointer-events-none"></div>
+
+        <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 relative z-10 w-full">
+            <div class="grid lg:grid-cols-12 gap-12 items-center">
+                
+                <div class="lg:col-span-7 space-y-6 text-center lg:text-left">
+                    <div class="inline-flex items-center gap-2 px-3.5 py-1.5 rounded-full bg-amber-500/10 border border-amber-500/30 text-amber-400 text-xs font-semibold tracking-wider uppercase">
+                        <i class="fa-solid fa-award"></i> Award-Winning Kenyan Composer & Educator
+                    </div>
+                    
+                    <h1 class="font-cinzel text-4xl sm:text-5xl lg:text-6xl font-extrabold tracking-tight text-white leading-tight">
+                        Crafting Sacred & <span class="text-gradient">Choral Harmony</span>
+                    </h1>
+                    
+                    <p class="text-slate-300 text-lg sm:text-xl max-w-2xl font-light leading-relaxed">
+                        Welcome to the home of original SATB compositions, sacred choral anthems, custom arrangements, and professional music engraving by <strong class="text-amber-300">Willice Kaburah</strong>, founder of <span class="text-slate-100 font-medium">Heritage Harmonies-KE</span>.
+                    </p>
+
+                    <div class="pt-4 flex flex-col sm:flex-row items-center justify-center lg:justify-start gap-4">
+                        <a href="#catalog" class="w-full sm:w-auto px-8 py-4 rounded-xl bg-gradient-gold text-slate-950 font-bold hover:brightness-110 shadow-lg shadow-amber-500/20 transition-all text-center flex items-center justify-center gap-2">
+                            <i class="fa-solid fa-book-open"></i> Explore Sheet Music
+                        </a>
+                        <a href="#player" class="w-full sm:w-auto px-8 py-4 rounded-xl bg-slate-800/80 hover:bg-slate-700 text-slate-200 font-semibold border border-slate-700 transition-all text-center flex items-center justify-center gap-2">
+                            <i class="fa-solid fa-play"></i> Listen to Samples
+                        </a>
+                    </div>
+
+                    <!-- Highlight Metrics -->
+                    <div class="pt-8 grid grid-cols-3 gap-4 border-t border-slate-800 max-w-lg mx-auto lg:mx-0">
+                        <div>
+                            <div class="font-cinzel text-2xl sm:text-3xl font-bold text-amber-400">10+</div>
+                            <div class="text-xs text-slate-400 uppercase tracking-wider mt-1">Key SATB Works</div>
+                        </div>
+                        <div>
+                            <div class="font-cinzel text-2xl sm:text-3xl font-bold text-amber-400">Regional</div>
+                            <div class="text-xs text-slate-400 uppercase tracking-wider mt-1">Award Winner</div>
+                        </div>
+                        <div>
+                            <div class="font-cinzel text-2xl sm:text-3xl font-bold text-amber-400">African</div>
+                            <div class="text-xs text-slate-400 uppercase tracking-wider mt-1">Sacred Choral</div>
+                        </div>
+                    </div>
+                </div>
+
+                <!-- Feature Hero Graphic Card -->
+                <div class="lg:col-span-5">
+                    <div class="relative mx-auto max-w-md lg:max-w-none">
+                        <div class="absolute -inset-1 bg-gradient-to-r from-amber-500 to-amber-700 rounded-3xl blur opacity-30"></div>
+                        <div class="relative rounded-2xl bg-cardbg border border-slate-800 p-6 sm:p-8 space-y-6 gold-glow">
+                            <div class="flex items-center justify-between border-b border-slate-800 pb-4">
+                                <div class="flex items-center gap-3">
+                                    <div class="w-12 h-12 rounded-xl bg-amber-500/10 flex items-center justify-center text-amber-400 text-xl font-bold">
+                                        <i class="fa-solid fa-trophy"></i>
+                                    </div>
+                                    <div>
+                                        <h3 class="font-bold text-slate-100">Hallelujah Hallelujah</h3>
+                                        <p class="text-xs text-amber-400">Award-Winning Composition</p>
+                                    </div>
+                                </div>
+                                <span class="px-2.5 py-1 rounded bg-amber-500/20 text-amber-300 text-xs font-semibold">SATB</span>
+                            </div>
+
+                            <!-- Mock Sheet Music Graphic snippet -->
+                            <div class="bg-slate-900 rounded-xl p-4 border border-slate-800/80 font-mono text-xs text-slate-400 space-y-2">
+                                <div class="flex justify-between items-center text-slate-500 text-[10px] uppercase">
+                                    <span>Soprano / Alto / Tenor / Bass</span>
+                                    <span>Key: G Major</span>
+                                </div>
+                                <div class="py-2 border-y border-slate-800 flex items-center justify-around text-amber-400/90 font-serif tracking-widest text-lg">
+                                    <span>🎼</span>
+                                    <span>♩ ♫ ♬ ♩</span>
+                                    <span>𝄢 𝄡 𝄞</span>
+                                    <span>♫ ♩ ♬</span>
+                                </div>
+                                <p class="italic text-slate-400 text-center text-xs font-sans">"Selected as the top composition in the region for exceptional choral voicing & harmonic structure."</p>
+                            </div>
+
+                            <button onclick="quickPlay('Hallelujah Hallelujah', 'Award-Winning Composition', 'hallelujah')" class="w-full py-3 rounded-lg bg-amber-500/20 hover:bg-amber-500/30 text-amber-300 text-sm font-semibold border border-amber-500/40 transition-all flex items-center justify-center gap-2">
+                                <i class="fa-solid fa-play"></i> Preview Featured Score & Audio
+                            </button>
+                        </div>
+                    </div>
+                </div>
+
+            </div>
+        </div>
+    </section>
+
+    <!-- About Section -->
+    <section id="about" class="py-20 bg-slate-900/60 border-y border-slate-800/60 relative">
+        <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
+            <div class="grid lg:grid-cols-12 gap-12 items-center">
+                
+                <div class="lg:col-span-5 relative">
+                    <div class="w-full h-80 sm:h-96 rounded-2xl bg-gradient-to-tr from-amber-600/20 via-slate-800 to-slate-900 border border-slate-700/80 p-8 flex flex-col justify-between relative overflow-hidden">
+                        <div class="absolute -bottom-10 -right-10 text-slate-800/40 text-9xl pointer-events-none font-serif">
+                            𝄢
+                        </div>
+                        <div class="space-y-4">
+                            <span class="text-xs font-bold uppercase tracking-widest text-amber-400">Founder & Director</span>
+                            <h3 class="font-cinzel text-3xl font-bold text-white">Heritage Harmonies-KE</h3>
+                            <p class="text-slate-300 text-sm leading-relaxed">
+                                Dedicated to preserving, enhancing, and expanding the rich vocal traditions of African sacred music and contemporary SATB choral repertoires.
+                            </p>
+                        </div>
+                        <div class="pt-6 border-t border-slate-700/60 flex items-center gap-4 text-xs text-slate-400">
+                            <span><i class="fa-solid fa-check-circle text-amber-400 mr-1"></i> Music Notation</span>
+                            <span><i class="fa-solid fa-check-circle text-amber-400 mr-1"></i> Choral Coaching</span>
+                        </div>
+                    </div>
+                </div>
+
+                <div class="lg:col-span-7 space-y-6">
+                    <div class="inline-block px-3 py-1 rounded-full bg-slate-800 text-amber-400 text-xs font-semibold uppercase tracking-wider">
+                        Biography & Passion
+                    </div>
+                    <h2 class="font-cinzel text-3xl sm:text-4xl font-bold text-white">
+                        Inspiring Choirs Through Thoughtful Harmony & Precision
+                    </h2>
+                    <p class="text-slate-300 leading-relaxed">
+                        <strong class="text-white">Willice Kaburah</strong> is a celebrated music educator, composer, arranger, and music engraver. With a deep passion for SATB choral counterpoint and African sacred song arrangements, his compositions combine rich vocal harmonies with uplifting thematic devotion.
+                    </p>
+                    <p class="text-slate-300 leading-relaxed">
+                        As the visionary behind <strong class="text-amber-300">Heritage Harmonies-KE</strong>, Willice serves church choirs, educational institutions, and competitive vocal ensembles across the region by providing pristine sheet music engraving, vocal arranging, and masterclass coaching.
+                    </p>
+
+                    <div class="grid sm:grid-cols-2 gap-4 pt-2">
+                        <div class="p-4 rounded-xl bg-cardbg border border-slate-800">
+                            <div class="text-amber-400 text-lg mb-2"><i class="fa-solid fa-church"></i></div>
+                            <h4 class="font-semibold text-slate-100 text-sm">Sacred & Swahili SATB</h4>
+                            <p class="text-slate-400 text-xs mt-1">Specialized in Swahili anthems and traditional sacred adaptations.</p>
+                        </div>
+                        <div class="p-4 rounded-xl bg-cardbg border border-slate-800">
+                            <div class="text-amber-400 text-lg mb-2"><i class="fa-solid fa-pen-nib"></i></div>
+                            <h4 class="font-semibold text-slate-100 text-sm">High-Precision Engraving</h4>
+                            <p class="text-slate-400 text-xs mt-1">Publication-ready sheet music with meticulous formatting and notation.</p>
+                        </div>
+                    </div>
+                </div>
+
+            </div>
+        </div>
+    </section>
+
+    <!-- Catalog Section -->
+    <section id="catalog" class="py-20 max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
+        <div class="text-center max-w-3xl mx-auto mb-12 space-y-4">
+            <span class="text-xs font-bold uppercase tracking-widest text-amber-400">Repertoire & Scores</span>
+            <h2 class="font-cinzel text-3xl sm:text-4xl font-bold text-white">Featured Composition Catalog</h2>
+            <p class="text-slate-400">Browse through Willice Kaburah's popular compositions, choral anthems, and arrangements. Select any piece to preview or request the full score.</p>
+            
+            <!-- Category Filter Tabs -->
+            <div class="flex flex-wrap items-center justify-center gap-2 pt-4" id="catalog-tabs">
+                <button onclick="filterCatalog('all')" class="tab-btn active px-4 py-2 rounded-full text-xs font-semibold transition-all bg-amber-500 text-slate-950" data-cat="all">All Scores</button>
+                <button onclick="filterCatalog('satb')" class="tab-btn px-4 py-2 rounded-full text-xs font-semibold transition-all bg-slate-800 text-slate-300 hover:bg-slate-700" data-cat="satb">SATB Choral</button>
+                <button onclick="filterCatalog('swahili')" class="tab-btn px-4 py-2 rounded-full text-xs font-semibold transition-all bg-slate-800 text-slate-300 hover:bg-slate-700" data-cat="swahili">African Sacred Traditional</button>
+                <button onclick="filterCatalog('sacred')" class="tab-btn px-4 py-2 rounded-full text-xs font-semibold transition-all bg-slate-800 text-slate-300 hover:bg-slate-700" data-cat="sacred">Sacred & Hymns</button>
+            </div>
+        </div>
+
+        <!-- Catalog Grid -->
+        <div class="grid md:grid-cols-2 lg:grid-cols-3 gap-6" id="catalog-grid">
+            <!-- Items rendered via JS -->
+        </div>
+    </section>
+
+    <!-- Audio & Sheet Music Previewer Interactive Widget -->
+    <section id="player" class="py-20 bg-slate-900 border-t border-slate-800">
+        <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
+            <div class="text-center max-w-2xl mx-auto mb-10 space-y-3">
+                <span class="text-xs font-bold uppercase tracking-widest text-amber-400">Interactive Studio</span>
+                <h2 class="font-cinzel text-3xl font-bold text-white">Score & Audio Player</h2>
+                <p class="text-slate-400 text-sm">Experience interactive score notation rendering alongside synthetic playback simulation.</p>
+            </div>
+
+            <div class="bg-cardbg rounded-2xl border border-slate-800 p-6 lg:p-8 shadow-2xl grid lg:grid-cols-12 gap-8">
+                
+                <!-- Left Column: Audio Controls & Track Info -->
+                <div class="lg:col-span-5 flex flex-col justify-between space-y-6">
+                    <div>
+                        <div class="flex items-center gap-3 mb-4">
+                            <div class="w-12 h-12 rounded-xl bg-amber-500/10 border border-amber-500/30 flex items-center justify-center text-amber-400 text-xl">
+                                <i class="fa-solid fa-compact-disc fa-spin-slow"></i>
+                            </div>
+                            <div>
+                                <h3 id="player-title" class="font-cinzel text-xl font-bold text-white">Hallelujah Hallelujah</h3>
+                                <p id="player-subtitle" class="text-xs text-amber-400">Award-Winning Regional SATB Composition</p>
+                            </div>
+                        </div>
+
+                        <!-- Track Selector Dropdown -->
+                        <div class="space-y-2">
+                            <label class="text-xs text-slate-400 font-medium">Select Preview Track:</label>
+                            <select id="track-selector" onchange="changeTrack(this.value)" class="w-full bg-slate-900 border border-slate-700 rounded-lg p-3 text-sm text-slate-200 focus:outline-none focus:border-amber-500">
+                                <option value="hallelujah">1. Hallelujah Hallelujah (Award Winner - SATB)</option>
+                                <option value="walewote">2. Wale Wote (African Traditional Swahili)</option>
+                                <option value="yerusalemi">3. Yerusalemi (Swahili Choral SATB)</option>
+                                <option value="rejoice">4. WEDDING ANTHEM; REJOICE (Choral)</option>
+                                <option value="arise">5. Arise And Shine (Praise Anthem)</option>
+                                <option value="beulah">6. Dwelling In Beulah Land (Arrangement)</option>
+                            </select>
+                        </div>
+                    </div>
+
+                    <!-- Synthetic Audio Waveform / Controls -->
+                    <div class="bg-slate-900/90 rounded-xl p-5 border border-slate-800 space-y-4">
+                        <!-- Playback Progress Bar -->
+                        <div class="space-y-1">
+                            <div class="flex justify-between text-xs text-slate-400">
+                                <span id="current-time">0:00</span>
+                                <span id="duration-time">0:45</span>
+                            </div>
+                            <div class="w-full bg-slate-800 rounded-full h-2 cursor-pointer relative" id="progress-container" onclick="seekAudio(event)">
+                                <div id="progress-bar" class="bg-amber-400 h-2 rounded-full w-0 transition-all duration-100"></div>
+                            </div>
+                        </div>
+
+                        <!-- Player Buttons -->
+                        <div class="flex items-center justify-center gap-6">
+                            <button onclick="prevTrack()" class="text-slate-400 hover:text-white transition-colors"><i class="fa-solid fa-backward-step text-lg"></i></button>
+                            <button id="play-btn" onclick="togglePlay()" class="w-14 h-14 rounded-full bg-amber-500 text-slate-950 flex items-center justify-center text-xl hover:scale-105 transition-all shadow-lg shadow-amber-500/20">
+                                <i class="fa-solid fa-play" id="play-icon"></i>
+                            </button>
+                            <button onclick="nextTrack()" class="text-slate-400 hover:text-white transition-colors"><i class="fa-solid fa-forward-step text-lg"></i></button>
+                        </div>
+
+                        <div class="text-center pt-2">
+                            <span class="text-[11px] text-slate-500"><i class="fa-solid fa-headphones mr-1"></i> Audio Synth Engine Simulation (Tone Preview)</span>
+                        </div>
+                    </div>
+
+                    <div class="flex gap-3">
+                        <button onclick="openRequestModal()" class="flex-1 py-3 rounded-xl bg-amber-500 text-slate-950 font-bold hover:bg-amber-400 transition-all text-xs uppercase tracking-wider text-center">
+                            Request Full Score (PDF)
+                        </button>
+                    </div>
+                </div>
+
+                <!-- Right Column: Animated Visual Sheet Music Viewer -->
+                <div class="lg:col-span-7 bg-slate-950 rounded-xl border border-slate-800 p-6 flex flex-col justify-between min-h-[350px]">
+                    <div class="flex justify-between items-center border-b border-slate-800 pb-3">
+                        <span class="text-xs font-mono text-amber-400 flex items-center gap-2">
+                            <i class="fa-solid fa-file-lines"></i> Interactive Engraved Score View
+                        </span>
+                        <span class="text-[11px] bg-slate-800 px-2 py-1 rounded text-slate-400 font-mono" id="score-key">Key: G Major | 4/4</span>
+                    </div>
+
+                    <!-- Visual Score Display Sheet -->
+                    <div class="my-6 bg-amber-100/90 text-slate-900 rounded p-6 shadow-inner relative overflow-hidden font-serif min-h-[200px] flex flex-col justify-center">
+                        <div class="text-center mb-4 border-b border-slate-400 pb-2">
+                            <h4 id="sheet-title" class="font-bold text-xl tracking-wide uppercase text-slate-900">Hallelujah Hallelujah</h4>
+                            <p class="text-xs italic text-slate-700">Composed by Willice Kaburah</p>
+                        </div>
+
+                        <!-- Animated Music Staff representation -->
+                        <div class="space-y-4 relative py-2">
+                            <div class="border-b-2 border-slate-800 h-0 w-full mb-1"></div>
+                            <div class="border-b-2 border-slate-800 h-0 w-full mb-1"></div>
+                            <div class="border-b-2 border-slate-800 h-0 w-full mb-1"></div>
+                            <div class="border-b-2 border-slate-800 h-0 w-full mb-1"></div>
+                            <div class="border-b-2 border-slate-800 h-0 w-full"></div>
+
+                            <!-- Animated Note Markers overlay -->
+                            <div id="notes-overlay" class="absolute inset-0 flex items-center justify-around text-slate-900 text-2xl font-bold">
+                                <span class="animate-pulse">𝄞</span>
+                                <span class="note-item transition-all transform hover:scale-125 cursor-pointer">♩</span>
+                                <span class="note-item transition-all transform hover:scale-125 cursor-pointer">♫</span>
+                                <span class="note-item transition-all transform hover:scale-125 cursor-pointer">♩</span>
+                                <span class="note-item transition-all transform hover:scale-125 cursor-pointer">♬</span>
+                                <span class="note-item transition-all transform hover:scale-125 cursor-pointer">𝄢</span>
+                            </div>
+                        </div>
+
+                        <div class="mt-4 text-[11px] text-slate-700 flex justify-between italic">
+                            <span id="sheet-voicing">Voicing: SATB Chorus</span>
+                            <span>Heritage Harmonies Edition</span>
+                        </div>
+                    </div>
+
+                    <p class="text-xs text-slate-400 text-center">
+                        Scores formatted with precision engraving standards. Contact Willice to receive high-res PDFs and rehearsal audio parts.
+                    </p>
+                </div>
+
+            </div>
+        </div>
+    </section>
+
+    <!-- Services Section -->
+    <section id="services" class="py-20 max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
+        <div class="text-center max-w-3xl mx-auto mb-16 space-y-4">
+            <span class="text-xs font-bold uppercase tracking-widest text-amber-400">Professional Expertise</span>
+            <h2 class="font-cinzel text-3xl sm:text-4xl font-bold text-white">Services Offered</h2>
+            <p class="text-slate-400">Tailored musical solutions for church choirs, schools, directors, and independent vocal ensembles.</p>
+        </div>
+
+        <div class="grid md:grid-cols-2 lg:grid-cols-4 gap-6">
+            
+            <!-- Service 1 -->
+            <div class="bg-cardbg border border-slate-800 hover:border-amber-500/50 p-6 rounded-2xl transition-all hover:-translate-y-1 group">
+                <div class="w-12 h-12 rounded-xl bg-amber-500/10 text-amber-400 flex items-center justify-center text-xl mb-6 group-hover:bg-amber-500 group-hover:text-slate-950 transition-all">
+                    <i class="fa-solid fa-pen-fountain"></i>
+                </div>
+                <h3 class="font-cinzel text-lg font-bold text-white mb-2">Music Composition</h3>
+                <p class="text-slate-400 text-xs leading-relaxed">
+                    Original choral compositions for SATB, sacred anthems, festival commissioned pieces, and ceremonial events.
+                </p>
+            </div>
+
+            <!-- Service 2 -->
+            <div class="bg-cardbg border border-slate-800 hover:border-amber-500/50 p-6 rounded-2xl transition-all hover:-translate-y-1 group">
+                <div class="w-12 h-12 rounded-xl bg-amber-500/10 text-amber-400 flex items-center justify-center text-xl mb-6 group-hover:bg-amber-500 group-hover:text-slate-950 transition-all">
+                    <i class="fa-solid fa-sliders"></i>
+                </div>
+                <h3 class="font-cinzel text-lg font-bold text-white mb-2">Choral Arranging</h3>
+                <p class="text-slate-400 text-xs leading-relaxed">
+                    Custom voice arrangement of traditional African folk songs, hymns, and contemporary melodies tailored to your choir's vocal range.
+                </p>
+            </div>
+
+            <!-- Service 3 -->
+            <div class="bg-cardbg border border-slate-800 hover:border-amber-500/50 p-6 rounded-2xl transition-all hover:-translate-y-1 group">
+                <div class="w-12 h-12 rounded-xl bg-amber-500/10 text-amber-400 flex items-center justify-center text-xl mb-6 group-hover:bg-amber-500 group-hover:text-slate-950 transition-all">
+                    <i class="fa-solid fa-print"></i>
+                </div>
+                <h3 class="font-cinzel text-lg font-bold text-white mb-2">Music Engraving</h3>
+                <p class="text-slate-400 text-xs leading-relaxed">
+                    Professional score notation and typesetting (Finale / Sibelius / Dorico) into publication-ready, clean PDF sheet music.
+                </p>
+            </div>
+
+            <!-- Service 4 -->
+            <div class="bg-cardbg border border-slate-800 hover:border-amber-500/50 p-6 rounded-2xl transition-all hover:-translate-y-1 group">
+                <div class="w-12 h-12 rounded-xl bg-amber-500/10 text-amber-400 flex items-center justify-center text-xl mb-6 group-hover:bg-amber-500 group-hover:text-slate-950 transition-all">
+                    <i class="fa-solid fa-graduation-cap"></i>
+                </div>
+                <h3 class="font-cinzel text-lg font-bold text-white mb-2">Choral Education</h3>
+                <p class="text-slate-400 text-xs leading-relaxed">
+                    Music theory tutoring, vocal coaching, choir conductor workshops, and sight-reading training for church and school choruses.
+                </p>
+            </div>
+
+        </div>
+    </section>
+
+    <!-- Contact / Score Request Form Section -->
+    <section id="contact" class="py-20 bg-slate-900 border-t border-slate-800">
+        <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
+            <div class="grid lg:grid-cols-12 gap-12">
+                
+                <div class="lg:col-span-5 space-y-6">
+                    <span class="text-xs font-bold uppercase tracking-widest text-amber-400">Get in Touch</span>
+                    <h2 class="font-cinzel text-3xl font-bold text-white">Request Scores or Commission a Piece</h2>
+                    <p class="text-slate-300 text-sm leading-relaxed">
+                        Are you looking for specific sheet music, tailored arrangements for your choir, or music engraving services? Send a message directly to Willice Kaburah.
+                    </p>
+
+                    <div class="space-y-4 pt-4">
+                        <div class="flex items-center gap-4 p-4 rounded-xl bg-cardbg border border-slate-800">
+                            <div class="w-10 h-10 rounded-lg bg-amber-500/10 text-amber-400 flex items-center justify-center text-lg">
+                                <i class="fa-solid fa-envelope"></i>
+                            </div>
+                            <div>
+                                <div class="text-xs text-slate-400">Direct Contact</div>
+                                <div class="text-sm font-semibold text-slate-200">willicekaburah@gmail.com</div>
+                            </div>
+                        </div>
+
+                        <div class="flex items-center gap-4 p-4 rounded-xl bg-cardbg border border-slate-800">
+                            <div class="w-10 h-10 rounded-lg bg-amber-500/10 text-amber-400 flex items-center justify-center text-lg">
+                                <i class="fa-solid fa-users"></i>
+                            </div>
+                            <div>
+                                <div class="text-xs text-slate-400">Organization</div>
+                                <div class="text-sm font-semibold text-slate-200">Heritage Harmonies-KE</div>
+                            </div>
+                        </div>
+
+                        <div class="flex items-center gap-4 p-4 rounded-xl bg-cardbg border border-slate-800">
+                            <div class="w-10 h-10 rounded-lg bg-amber-500/10 text-amber-400 flex items-center justify-center text-lg">
+                                <i class="fa-solid fa-globe"></i>
+                            </div>
+                            <div>
+                                <div class="text-xs text-slate-400">Location</div>
+                                <div class="text-sm font-semibold text-slate-200">Kenya (Serving Worldwide)</div>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+
+                <!-- Form Card -->
+                <div class="lg:col-span-7 bg-cardbg p-8 rounded-2xl border border-slate-800">
+                    <form id="contact-form" onsubmit="handleFormSubmit(event)" class="space-y-5">
+                        <div class="grid sm:grid-cols-2 gap-5">
+                            <div>
+                                <label class="block text-xs text-slate-300 font-semibold mb-2">Your Full Name *</label>
+                                <input type="text" required placeholder="e.g. David Mwangi" class="w-full bg-slate-900 border border-slate-700 rounded-lg p-3 text-sm text-slate-200 focus:outline-none focus:border-amber-500">
+                            </div>
+                            <div>
+                                <label class="block text-xs text-slate-300 font-semibold mb-2">Email Address *</label>
+                                <input type="email" required placeholder="name@domain.com" class="w-full bg-slate-900 border border-slate-700 rounded-lg p-3 text-sm text-slate-200 focus:outline-none focus:border-amber-500">
+                            </div>
+                        </div>
+
+                        <div class="grid sm:grid-cols-2 gap-5">
+                            <div>
+                                <label class="block text-xs text-slate-300 font-semibold mb-2">Choir / Organization</label>
+                                <input type="text" placeholder="e.g. St. Cecilia Choir" class="w-full bg-slate-900 border border-slate-700 rounded-lg p-3 text-sm text-slate-200 focus:outline-none focus:border-amber-500">
+                            </div>
+                            <div>
+                                <label class="block text-xs text-slate-300 font-semibold mb-2">Inquiry Type</label>
+                                <select id="form-inquiry-type" class="w-full bg-slate-900 border border-slate-700 rounded-lg p-3 text-sm text-slate-200 focus:outline-none focus:border-amber-500">
+                                    <option value="sheet_music">Request Sheet Music PDF</option>
+                                    <option value="composition">Commission New Work</option>
+                                    <option value="arranging">Choral Arrangement Request</option>
+                                    <option value="engraving">Music Notation / Engraving</option>
+                                    <option value="coaching">Workshops & Coaching</option>
+                                </select>
+                            </div>
+                        </div>
+
+                        <div>
+                            <label class="block text-xs text-slate-300 font-semibold mb-2">Message or Specific Score Title *</label>
+                            <textarea rows="4" required placeholder="Mention the piece name (e.g. Hallelujah Hallelujah, Wale Wote) or details about your choir..." class="w-full bg-slate-900 border border-slate-700 rounded-lg p-3 text-sm text-slate-200 focus:outline-none focus:border-amber-500"></textarea>
+                        </div>
+
+                        <button type="submit" class="w-full py-4 rounded-xl bg-gradient-gold text-slate-950 font-bold hover:brightness-110 shadow-lg shadow-amber-500/20 transition-all text-sm uppercase tracking-wider">
+                            Send Request
+                        </button>
+                    </form>
+
+                    <!-- Success Message Alert -->
+                    <div id="form-success" class="hidden mt-4 p-4 rounded-xl bg-emerald-500/10 border border-emerald-500/30 text-emerald-400 text-sm flex items-center gap-3">
+                        <i class="fa-solid fa-circle-check text-lg"></i>
+                        <span>Thank you! Your score request/message has been received. Willice will get back to you shortly.</span>
+                    </div>
+                </div>
+
+            </div>
+        </div>
+    </section>
+
+    <!-- Footer -->
+    <footer class="bg-darkbg border-t border-slate-800 py-12 text-slate-400 text-sm">
+        <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 flex flex-col md:flex-row items-center justify-between gap-6">
+            <div class="flex items-center gap-3">
+                <div class="w-8 h-8 rounded-full bg-amber-500/10 text-amber-400 border border-amber-500/30 flex items-center justify-center font-bold">
+                    𝄢
+                </div>
+                <span class="font-cinzel text-lg font-bold text-slate-200">Willice Kaburah</span>
+            </div>
+
+            <p class="text-xs text-slate-500 text-center">
+                © <span id="year"></span> Willice Kaburah. Heritage Harmonies-KE. All rights reserved.
+            </p>
+
+            <div class="flex gap-4 text-slate-400">
+                <a href="#home" class="hover:text-amber-400 transition-colors"><i class="fa-solid fa-arrow-up"></i> Back to Top</a>
+            </div>
+        </div>
+    </footer>
+
+    <!-- JavaScript Application Logic -->
+    <script>
+        document.getElementById('year').textContent = new Date().getFullYear();
+
+        // Catalog Data Source
+        const compositions = [
+            {
+                id: 'hallelujah',
+                title: 'Hallelujah Hallelujah',
+                category: 'satb',
+                categoryName: 'SATB Choral',
+                voicing: 'SATB & Organ / A Cappella',
+                badge: 'Award Winner',
+                badgeColor: 'bg-amber-500/20 text-amber-300',
+                desc: 'Celebrated award-winning composition recognized regionally for majestic voice leading and joyous counterpoint.',
+                key: 'G Major',
+                tempo: 'Allegro Maestoso'
+            },
+            {
+                id: 'walewote',
+                title: 'Wale Wote',
+                category: 'swahili',
+                categoryName: 'African Sacred Traditional',
+                voicing: 'Swahili SATB Chorus',
+                badge: 'Popular',
+                badgeColor: 'bg-emerald-500/20 text-emerald-300',
+                desc: 'An inspiring Swahili sacred piece rich in African rhythms, call-and-response voicing, and expressive harmonic depth.',
+                key: 'F Major',
+                tempo: 'Andante Moderato'
+            },
+            {
+                id: 'yerusalemi',
+                title: 'Yerusalemi',
+                category: 'swahili',
+                categoryName: 'African Sacred Traditional',
+                voicing: 'Swahili SATB',
+                badge: 'Sacred SATB',
+                badgeColor: 'bg-blue-500/20 text-blue-300',
+                desc: 'Stirring hymn describing the holy city, built with resonant vocal layers and solemn reverence.',
+                key: 'D Major',
+                tempo: 'Adagio Expressivo'
+            },
+            {
+                id: 'rejoice',
+                title: 'WEDDING ANTHEM; REJOICE',
+                category: 'satb',
+                categoryName: 'SATB Choral',
+                voicing: 'SATB Anthem',
+                badge: 'Celebration',
+                badgeColor: 'bg-purple-500/20 text-purple-300',
+                desc: 'A festive anthem designed for weddings, thanksgiving services, and celebratory choral concerts.',
+                key: 'C Major',
+                tempo: 'Con Brio'
+            },
+            {
+                id: 'arise',
+                title: 'Arise And Shine',
+                category: 'sacred',
+                categoryName: 'Sacred & Hymns',
+                voicing: 'SATB Choir & Accompaniment',
+                badge: 'Inspirational',
+                badgeColor: 'bg-amber-500/20 text-amber-300',
+                desc: 'Uplifting scripture-inspired sacred anthem focusing on spiritual triumph and light.',
+                key: 'Eb Major',
+                tempo: 'Allegro'
+            },
+            {
+                id: 'mungu',
+                title: 'Mungu Mkuu',
+                category: 'swahili',
+                categoryName: 'African Sacred Traditional',
+                voicing: 'SATB Vocal Choir',
+                badge: 'Swahili Hymn',
+                badgeColor: 'bg-emerald-500/20 text-emerald-300',
+                desc: 'Heartfelt hymn extolling divine majesty through lush African voice harmonies.',
+                key: 'A Major',
+                tempo: 'Moderato'
+            },
+            {
+                id: 'greater',
+                title: 'Your Love Is Greater',
+                category: 'sacred',
+                categoryName: 'Sacred & Hymns',
+                voicing: 'SATB Quartet / Choir',
+                badge: 'Sacred',
+                badgeColor: 'bg-blue-500/20 text-blue-300',
+                desc: 'Devotional composition suited for worship services, communion, and sacred recitals.',
+                key: 'F Major',
+                tempo: 'Lento'
+            },
+            {
+                id: 'beulah',
+                title: 'Dwelling In Beulah Land',
+                category: 'sacred',
+                categoryName: 'Sacred Arrangement',
+                voicing: 'SATB Choral Arrangement',
+                badge: 'Arrangement',
+                badgeColor: 'bg-purple-500/20 text-purple-300',
+                desc: 'Masterful choral arrangement revitalizing classic hymnal themes with contemporary counterpoint.',
+                key: 'G Major',
+                tempo: 'Allegretto'
+            },
+            {
+                id: 'praise',
+                title: 'Praise Ye The Lord',
+                category: 'satb',
+                categoryName: 'SATB Choral',
+                voicing: 'SATB Double Choir option',
+                badge: 'Anthem',
+                badgeColor: 'bg-amber-500/20 text-amber-300',
+                desc: 'Dynamic doxology anthem with soaring soprano lines and powerful bass foundation.',
+                key: 'D Major',
+                tempo: 'Vivace'
+            }
+        ];
+
+        function renderCatalog(items) {
+            const grid = document.getElementById('catalog-grid');
+            grid.innerHTML = items.map(item => `
+                <div class="bg-cardbg border border-slate-800 rounded-2xl p-6 hover:border-amber-500/50 transition-all flex flex-col justify-between group">
+                    <div class="space-y-3">
+                        <div class="flex items-center justify-between">
+                            <span class="text-xs ${item.badgeColor} px-2.5 py-1 rounded-full font-medium">${item.badge}</span>
+                            <span class="text-xs text-slate-500 font-mono">${item.categoryName}</span>
+                        </div>
+                        <h3 class="font-cinzel text-xl font-bold text-slate-100 group-hover:text-amber-400 transition-colors">${item.title}</h3>
+                        <p class="text-xs text-amber-400/80 font-medium">${item.voicing}</p>
+                        <p class="text-slate-400 text-xs leading-relaxed line-clamp-3">${item.desc}</p>
+                    </div>
+
+                    <div class="pt-6 mt-4 border-t border-slate-800/80 flex items-center justify-between gap-2">
+                        <button onclick="quickPlay('${item.title.replace(/'/g, "\\'")}', '${item.voicing}', '${item.id}')" class="px-3 py-2 rounded-lg bg-slate-800 hover:bg-slate-700 text-xs text-slate-200 font-semibold transition-all flex items-center gap-1.5">
+                            <i class="fa-solid fa-play text-amber-400"></i> Listen Preview
+                        </button>
+                        <a href="#contact" onclick="requestSpecificScore('${item.title.replace(/'/g, "\\'")}')" class="px-3 py-2 rounded-lg bg-amber-500/10 hover:bg-amber-500 text-amber-400 hover:text-slate-950 text-xs font-semibold border border-amber-500/30 transition-all">
+                            Get Score
+                        </a>
+                    </div>
+                </div>
+            `).join('');
+        }
+
+        function filterCatalog(category) {
+            // Active Tab UI
+            const buttons = document.querySelectorAll('#catalog-tabs button');
+            buttons.forEach(btn => {
+                if (btn.dataset.cat === category) {
+                    btn.className = 'tab-btn active px-4 py-2 rounded-full text-xs font-semibold transition-all bg-amber-500 text-slate-950';
+                } else {
+                    btn.className = 'tab-btn px-4 py-2 rounded-full text-xs font-semibold transition-all bg-slate-800 text-slate-300 hover:bg-slate-700';
+                }
+            });
+
+            if (category === 'all') {
+                renderCatalog(compositions);
+            } else {
+                const filtered = compositions.filter(c => c.category === category);
+                renderCatalog(filtered);
+            }
+        }
+
+        // Quick action to link to contact form
+        function requestSpecificScore(title) {
+            const select = document.getElementById('form-inquiry-type');
+            if (select) select.value = 'sheet_music';
+            const messageBox = document.querySelector('#contact textarea');
+            if (messageBox) {
+                messageBox.value = `Hello Willice, I would like to request the sheet music / details for: "${title}".`;
+            }
+        }
+
+        let isPlaying = false;
+        let audioCtx = null;
+        let playInterval = null;
+        let currentProgress = 0;
+        let selectedTrackKey = 'hallelujah';
+
+        const trackNotes = {
+            'hallelujah': [261.63, 329.63, 392.00, 523.25, 392.00, 329.63], // C E G C G E
+            'walewote': [293.66, 349.23, 440.00, 349.23, 293.66, 220.00],
+            'yerusalemi': [220.00, 277.18, 329.63, 440.00, 329.63, 277.18],
+            'rejoice': [329.63, 392.00, 493.88, 587.33, 493.88, 392.00],
+            'arise': [311.13, 392.00, 466.16, 622.25, 466.16, 392.00],
+            'beulah': [261.63, 329.63, 392.00, 440.00, 392.00, 329.63]
+        };
+
+        function initAudioContext() {
+            if (!audioCtx) {
+                const AudioContext = window.AudioContext || window.webkitAudioContext;
+                audioCtx = new AudioContext();
+            }
+        }
+
+        function playTone(freq) {
+            try {
+                initAudioContext();
+                if (audioCtx.state === 'suspended') {
+                    audioCtx.resume();
+                }
+                const osc = audioCtx.createOscillator();
+                const gain = audioCtx.createGain();
+                osc.type = 'sine';
+                osc.frequency.setValueAtTime(freq, audioCtx.currentTime);
+                
+                gain.gain.setValueAtTime(0.15, audioCtx.currentTime);
+                gain.gain.exponentialRampToValueAtTime(0.001, audioCtx.currentTime + 0.5);
+
+                osc.connect(gain);
+                gain.connect(audioCtx.destination);
+
+                osc.start();
+                osc.stop(audioCtx.currentTime + 0.5);
+            } catch(e) {
+                console.log('Web Audio Synth simulated:', e);
+            }
+        }
+
+        function togglePlay() {
+            if (isPlaying) {
+                pauseAudio();
+            } else {
+                startAudio();
+            }
+        }
+
+        function startAudio() {
+            isPlaying = true;
+            document.getElementById('play-icon').className = 'fa-solid fa-pause';
+            initAudioContext();
+
+            let step = 0;
+            const frequencies = trackNotes[selectedTrackKey] || trackNotes['hallelujah'];
+
+            playInterval = setInterval(() => {
+                currentProgress += 2;
+                if (currentProgress > 100) {
+                    currentProgress = 0;
+                }
+                document.getElementById('progress-bar').style.width = currentProgress + '%';
+                
+                // Play synth chime note
+                playTone(frequencies[step % frequencies.length]);
+                step++;
+
+                // Animate Staff notes visually
+                const noteItems = document.querySelectorAll('.note-item');
+                noteItems.forEach((item, idx) => {
+                    if (idx === (step % noteItems.length)) {
+                        item.classList.add('text-amber-600', 'scale-125');
+                    } else {
+                        item.classList.remove('text-amber-600', 'scale-125');
+                    }
+                });
+
+                // Format time string
+                const totalSeconds = Math.floor((currentProgress / 100) * 45);
+                const mins = Math.floor(totalSeconds / 60);
+                const secs = totalSeconds % 60;
+                document.getElementById('current-time').textContent = `${mins}:${secs < 10 ? '0' : ''}${secs}`;
+
+            }, 400);
+        }
+
+        function pauseAudio() {
+            isPlaying = false;
+            document.getElementById('play-icon').className = 'fa-solid fa-play';
+            if (playInterval) clearInterval(playInterval);
+        }
+
+        function changeTrack(key) {
+            selectedTrackKey = key;
+            currentProgress = 0;
+            document.getElementById('progress-bar').style.width = '0%';
+            
+            const found = compositions.find(c => c.id === key);
+            if (found) {
+                document.getElementById('player-title').textContent = found.title;
+                document.getElementById('player-subtitle').textContent = found.voicing;
+                document.getElementById('sheet-title').textContent = found.title;
+                document.getElementById('sheet-voicing').textContent = 'Voicing: ' + found.voicing;
+                document.getElementById('score-key').textContent = `Key: ${found.key} | Tempo: ${found.tempo}`;
+            }
+
+            if (isPlaying) {
+                pauseAudio();
+                startAudio();
+            }
+        }
+
+        function quickPlay(title, voicing, id) {
+            const selector = document.getElementById('track-selector');
+            if (selector && trackNotes[id]) {
+                selector.value = id;
+                changeTrack(id);
+            }
+            document.getElementById('player').scrollIntoView({ behavior: 'smooth' });
+            if (!isPlaying) {
+                startAudio();
+            }
+        }
+
+        function seekAudio(e) {
+            const container = document.getElementById('progress-container');
+            const rect = container.getBoundingClientRect();
+            const clickX = e.clientX - rect.left;
+            const width = rect.width;
+            currentProgress = Math.max(0, Math.min(100, (clickX / width) * 100));
+            document.getElementById('progress-bar').style.width = currentProgress + '%';
+        }
+
+        function nextTrack() {
+            const selector = document.getElementById('track-selector');
+            let nextIndex = selector.selectedIndex + 1;
+            if (nextIndex >= selector.options.length) nextIndex = 0;
+            selector.selectedIndex = nextIndex;
+            changeTrack(selector.value);
+        }
+
+        function prevTrack() {
+            const selector = document.getElementById('track-selector');
+            let prevIndex = selector.selectedIndex - 1;
+            if (prevIndex < 0) prevIndex = selector.options.length - 1;
+            selector.selectedIndex = prevIndex;
+            changeTrack(selector.value);
+        }
+
+        function openRequestModal() {
+            document.getElementById('contact').scrollIntoView({ behavior: 'smooth' });
+        }
+
+        function handleFormSubmit(e) {
+            e.preventDefault();
+            const successBox = document.getElementById('form-success');
+            successBox.classList.remove('hidden');
+            e.target.reset();
+            setTimeout(() => {
+                successBox.classList.add('hidden');
+            }, 6000);
+        }
+
+        // Mobile Menu Toggle logic
+        document.getElementById('mobile-menu-btn').addEventListener('click', () => {
+            const menu = document.getElementById('mobile-menu');
+            menu.classList.toggle('hidden');
+        });
+
+        // Initialize default view
+        window.onload = function() {
+            renderCatalog(compositions);
+        };
+    </script>
+</body>
+</html>
